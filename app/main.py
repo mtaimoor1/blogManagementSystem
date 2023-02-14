@@ -14,7 +14,13 @@ def home():
 
 @app.get("/posts")
 def get_all_posts():
-    data = db_cursor.execute_query("SELECT * FROM posts")
+    data = db_cursor.get_posts(table="posts")
+    return {"posts": data}
+
+
+@app.get("/posts/{post_id}")
+def get_all_posts(post_id: int):
+    data = db_cursor.get_posts(table="posts", post_id=str(post_id))
     return {"posts": data}
 
 

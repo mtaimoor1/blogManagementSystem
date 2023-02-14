@@ -12,7 +12,13 @@ class QueryPG:
         self.connection = postgres.get_connection
         self.cursor = self.connection.cursor()
 
-    def execute_query(self, query):
+    def get_posts(self, table: str, post_id: str = None):
+        if post_id:
+            query = """
+                    SELECT * FROM %s WHERE id=%s
+                    """%(table, post_id)
+        else:
+            query = """SELECT * FROM %s"""%(table)
         self.cursor.execute(f"{query}")
         data = self.cursor.fetchall()
         return data
