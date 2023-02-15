@@ -19,7 +19,7 @@ def get_all_posts():
 
 
 @app.get("/posts/{post_id}")
-def get_all_posts(post_id: int):
+def get_single_posts(post_id: int):
     data = db_cursor.get_posts(table="posts", post_id=str(post_id))
     return {"posts": data}
 
