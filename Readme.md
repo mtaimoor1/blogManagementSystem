@@ -1,5 +1,5 @@
 # Setting up the environment
-Set up an virtual env and install the dependencies using the following command
+Set up a virtual env and install the dependencies using the following command
 ```bash
 pip install -r requirements.txt
 ```
@@ -16,4 +16,4 @@ To set up the database, go to the root project folder and run the following comm
 ```bash
 docker-compose up -d
 ```
-After the database is up and running log in to pgadmin dashboard that is running on ***localhost:5050***. Use the credentials mentioned in the docker-compose file i.e. **user: ***admin@admin.com*** pass: ***root*****
+After the database is up and running, log in to pgadmin dashboard that is running on ***localhost:5050***. Use the credentials mentioned in the docker-compose file i.e. **user: ***admin@admin.com*** pass: ***root*****
